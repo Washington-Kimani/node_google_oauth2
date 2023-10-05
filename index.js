@@ -52,7 +52,7 @@ app.get('/auth/google/callback',
 
 app.get('/auth/google/success', isLoggedIn, (req, res) => {
     let user = req.user
-    res.render('home', { user: user });
+    user ? res.render('home', { user: user }): res.send(`Something went wrong!`);
 });
 
 app.get('/auth/google/failure', (req, res) => {

@@ -11,7 +11,6 @@ passport.use(new GoogleStrategy({
 },
     function (request, accessToken, refreshToken, profile, done) {
         done(null, profile);
-        console.log(profile);
     }
 ));
 
